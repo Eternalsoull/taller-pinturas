@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::table('pinturas', function (Blueprint $table) {
             $table->string('coleccion', 100)->nullable()->after('tecnica');
+            $table->string('dimenciones', 50)->after('coleccion'); 
         });
     }
 
@@ -24,6 +25,7 @@ return new class extends Migration
         Schema::table('pinturas', function (Blueprint $table) {
             
             $table->dropColumn('coleccion');
+            $table->dropColumn('dimenciones');
         });
     }
 };

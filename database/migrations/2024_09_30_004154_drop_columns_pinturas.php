@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('pinturas', function (Blueprint $table) {
-            //
-            $table->dropColumn(['descripcion', 'vendido']);
-        });
+        // Schema::table('pinturas', function (Blueprint $table) {
+        //     //
+        //     $table->dropColumn(['descripcion', 'vendido']);
+        // });
     }
 
     /**
@@ -22,10 +22,10 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('pinturas', function (Blueprint $table) {
-            //
-            $table->text('descripcion')->nullable();
-            $table->boolean('vendido')->default(false);
-        });
+        // Schema::table('pinturas', function (Blueprint $table) {
+        //     //
+        //     $table->text('descripcion')->nullable();
+        //     $table->boolean('vendido')->default(false);
+        // });
     }
 };
