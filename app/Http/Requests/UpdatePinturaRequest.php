@@ -32,6 +32,7 @@ class UpdatePinturaRequest extends FormRequest
             "vendido" => ["sometimes", "boolean"],
             "coleccion" => ["nullable", "string", "max:255"],
             "dimenciones" => ["sometimes", "string", "max:255"],
+            "categoria_id" => ["sometimes", "exists:categorias,id"]
         ];
     }
 }

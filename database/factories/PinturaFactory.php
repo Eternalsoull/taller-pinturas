@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\Categoria;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Pintura>
@@ -27,6 +28,7 @@ class PinturaFactory extends Factory
             "vendido" => $this->faker->boolean(),
             "coleccion" => $this->faker->word(),
             "dimenciones" => $this->faker->word(),
+            "categoria_id" => Categoria::factory(),
         ];
     }
 }

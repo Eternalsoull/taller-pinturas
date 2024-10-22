@@ -65,7 +65,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"nombre\": \"Amanecer en la montaña\",\r\n    \"descripcion\": \"Una pintura que captura la tranquilidad de un amanecer en las montañas, con tonos suaves y luces matutinas.\",\r\n    \"precio\": 1200.50,\r\n    \"cantidad\": 3,\r\n    \"fecha_creacion\": \"2024-10-14\",\r\n    \"artista\": \"María López\",\r\n    \"tecnica\": \"oleo\",\r\n    \"vendido\": false,\r\n    \"coleccion\": \"Paisajes Serene\",\r\n    \"dimenciones\": \"100x70 cm\"\r\n}\r\n",
+					"raw": "{\r\n  \"nombre\": \"Noche estrellada\",\r\n  \"descripcion\": \"Pintura al óleo que representa un paisaje nocturno con un cielo estrellado.\",\r\n  \"precio\": 1500.00,\r\n  \"cantidad\": 5,\r\n  \"fecha_creacion\": \"2024-10-12\",\r\n  \"artista\": \"Vincent van Gogh\",\r\n  \"tecnica\": \"oleo\",\r\n  \"vendido\": false,\r\n  \"coleccion\": \"Paisajes nocturnos\",\r\n  \"dimenciones\": \"74 cm x 92 cm\",\r\n  \"categoria_id\": 1\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -109,7 +109,7 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:8000/api/pinturas/101",
+					"raw": "http://localhost:8000/api/pinturas/114",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -118,7 +118,7 @@
 					"path": [
 						"api",
 						"pinturas",
-						"101"
+						"114"
 					]
 				}
 			},
@@ -147,7 +147,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"cantidad\": 4\r\n}",
+					"raw": "{\r\n    \"cantidad\": 3\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -155,7 +155,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8000/api/pinturas/102",
+					"raw": "http://localhost:8000/api/pinturas/114",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -164,7 +164,7 @@
 					"path": [
 						"api",
 						"pinturas",
-						"102"
+						"114"
 					]
 				}
 			},
@@ -192,7 +192,7 @@
 					}
 				],
 				"url": {
-					"raw": "http://localhost:8000/api/pinturas/101",
+					"raw": "http://localhost:8000/api/pinturas/113",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -201,7 +201,7 @@
 					"path": [
 						"api",
 						"pinturas",
-						"101"
+						"113"
 					]
 				}
 			},
@@ -266,6 +266,213 @@
 					"path": [
 						"api",
 						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "IndexCategorias",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|v5ixL8QzLdf8Zpeh5xcZN4lXKgk1i3tE0tz6YQk8d2576057",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/categorias?page=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"categorias"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "StoreCategorias",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|v5ixL8QzLdf8Zpeh5xcZN4lXKgk1i3tE0tz6YQk8d2576057",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"nombre\": \"Impresionismo\",\r\n  \"descripcion\": \"Obras que capturan la luz y el movimiento, a menudo al aire libre.\",\r\n  \"activo\": true\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/categorias",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"categorias"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ShowCategorias",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|v5ixL8QzLdf8Zpeh5xcZN4lXKgk1i3tE0tz6YQk8d2576057",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/categorias/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"categorias",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateCategorias",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|v5ixL8QzLdf8Zpeh5xcZN4lXKgk1i3tE0tz6YQk8d2576057",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Surrealismo\",\r\n    \"descripcion\": \"Estilo de pintura que busca liberar el subconsciente.\",\r\n    \"activo\": true\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/categorias/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"categorias",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DestroyCategorias",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|v5ixL8QzLdf8Zpeh5xcZN4lXKgk1i3tE0tz6YQk8d2576057",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/categorias/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"categorias",
+						"1"
 					]
 				}
 			},

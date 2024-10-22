@@ -34,6 +34,7 @@ class PinturaController extends Controller
      */
     public function show(Pintura $pintura)
     {
+        $pintura->load('categoria'); // Carga la relación 'categoria'
         return response()->json(['pintura' => $pintura], Response::HTTP_OK);
         //
     }

@@ -19,6 +19,12 @@ class Pintura extends Model
         'tecnica',
         'vendido',
         'coleccion',
-        'dimenciones'
+        'dimenciones',
+        'categoria_id'
     ];
+
+    public function categoria()
+    {
+        return $this->belongsTo(Categoria::class);
+    }
 }
