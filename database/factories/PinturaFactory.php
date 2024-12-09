@@ -28,7 +28,9 @@ class PinturaFactory extends Factory
             "vendido" => $this->faker->boolean(),
             "coleccion" => $this->faker->word(),
             "dimenciones" => $this->faker->word(),
-            "categoria_id" => Categoria::factory(),
+            "categoria_id" => Categoria::all()->random()->id,
+            "imagen" => $this->faker->imageUrl(),
+
         ];
     }
 }

@@ -32,7 +32,8 @@ class StorePinturaRequest extends FormRequest
             "vendido" => ["required", "boolean"],
             "coleccion" => ["required", "string", "max:255"],
             "dimenciones" => ["required", "string", "max:255"],
-            "categoria_id" => ["required", "exists:categorias,id"] 
+            "categoria_id" => ["required", "exists:categorias,id"],
+            'imagen' => 'nullable|string|max:2048'
             //
         ];
     }

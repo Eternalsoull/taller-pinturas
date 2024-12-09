@@ -32,6 +32,7 @@ class PinturaRequest extends FormRequest
             "vendido" => ["required", "boolean"],
             "coleccion" => ["required", "string", "max:255"],
             "dimenciones" => ["required", "string", "max:255"],
+            "imagen" => ["required", "string", "max:1000"],
             //
         ];
     }

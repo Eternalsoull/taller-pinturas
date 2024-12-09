@@ -10,27 +10,46 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 class CategoriaFactory extends Factory
 {
     /**
-     * Define the model's default state.
+     * Una lista de nombres de categorías predefinidas.
+     */
+    protected static $nombresCategorias = [
+        "Postimpresionismo",
+        "Surrealismo",
+        "Expresionismo",
+        "Cubismo",
+        "Fauvismo",
+        "Rococó",
+        "Realismo",
+        "Barroco",
+        "Neoclasicismo",
+        "Romanticismo"
+    ];
+
+    /**
+     * Índice para rastrear el nombre actual.
+     */
+    protected static $index = 0;
+
+    /**
+     * Define el estado por defecto del modelo.
      *
      * @return array<string, mixed>
      */
     public function definition(): array
     {
-        $nombresCategorias = [
-            "Postimpresionismo",
-            "Surrealismo",
-            "Expresionismo",
-            "Cubismo",
-            "Fauvismo",
-            "Rococó",
-            "Realismo",
-            "Barroco",
-            "Neoclasicismo",
-            "Romanticismo"
-        ];
+        // Verifica si el índice supera la cantidad de nombres disponibles.
+        if (self::$index >= count(self::$nombresCategorias)) {
+            throw new \Exception('Se han generado más categorías de las disponibles en el array.');
+        }
+
+        // Obtiene el nombre basado en el índice actual.
+        $nombre = self::$nombresCategorias[self::$index];
+
+        // Incrementa el índice para la próxima llamada.
+        self::$index++;
 
         return [
-            "nombre" => $this->faker->randomElement($nombresCategorias),
+            "nombre" => $nombre,
             "descripcion" => $this->faker->sentence(),
             "activo" => $this->faker->boolean(),
         ];
